@@ -5,8 +5,7 @@ import _pickle as cPickle
 import gzip
 
 def load_model():
-
-    with gzip.open('saved_steps_zp.pkl', 'rb') as f:
+    with gzip.open('saved_steps_zp.pkl.gz', 'rb') as f:
         data = cPickle.load(f)
     return data
     # with open('saved_steps.pkl','rb') as file:
