@@ -1,11 +1,17 @@
 import streamlit as st
 import pickle
 import numpy as np
+import _pickle as cPickle
+import gzip
 
 def load_model():
-    with open('saved_steps.pkl','rb') as file:
-        data = pickle.load(file)
+
+    with gzip.open('saved_steps_zp.pkl', 'rb') as f:
+        data = cPickle.load(f)
     return data
+    # with open('saved_steps.pkl','rb') as file:
+    #     data = pickle.load(file)
+    # return data
 
 data = load_model()
 
